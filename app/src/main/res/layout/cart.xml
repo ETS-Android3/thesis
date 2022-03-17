@@ -48,7 +48,7 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="1dp"/>
 
     <LinearLayout
         android:id="@id/linearlayout2"
@@ -115,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F9F9F9"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="1dp"
             android:layout_weight="1"
             android:padding="5dp"
             android:layout_marginEnd="50dp">
@@ -138,7 +138,7 @@
                 android:textAllCaps="false"
                 android:paddingStart="8dp"
                 android:paddingRight="8dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="1dp"
                 android:textSize="10dp"/>
 
     </LinearLayout>
@@ -148,13 +148,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-OR-"
-        android:layout_marginTop="20dp"/>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/linear_dotted_background"
-        android:layout_margin="40dp"
         android:padding="20dp">
 
         <TextView
@@ -180,7 +179,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/continue2_background"
-            android:layout_marginBottom="20dp"
             android:text="Continue"
             android:textColor="@color/white"
             android:textAllCaps="false"

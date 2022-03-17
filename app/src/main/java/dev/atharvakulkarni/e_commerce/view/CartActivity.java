@@ -1,15 +1,23 @@
 package dev.atharvakulkarni.e_commerce.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,96 +25,107 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.atharvakulkarni.e_commerce.R;
-import dev.atharvakulkarni.e_commerce.ViewModel.CartViewModel;
-import dev.atharvakulkarni.e_commerce.adapter.CartAdapter;
-import dev.atharvakulkarni.e_commerce.databinding.CartBinding;
+import dev.atharvakulkarni.e_commerce.databinding.ActivityCartBinding;
 import dev.atharvakulkarni.e_commerce.model.Product;
-import dev.atharvakulkarni.e_commerce.storage.LoginUtils;
 
-import static android.os.Build.PRODUCT;
-
-public class CartActivity extends AppCompatActivity
-{
-    CartBinding cartBinding;
-    RecyclerView recyclerView;
-    LinearLayoutManager linearLayoutManager;
-    Button continue_button;
-    CartViewModel cartViewModel;
-    CartAdapter cartAdapter;
-
-    private List<Product> favoriteList;
+public class CartActivity extends AppCompatActivity {
+    ActivityCartBinding mBinding;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        cartBinding = DataBindingUtil.setContentView(this, R.layout.cart);
-
-        getWindow().setStatusBarColor(getResources().getColor(R.color.white, getTheme()));
-
-        recyclerView = cartBinding.recyclerview;
-        continue_button = cartBinding.continueButton;
-
-        setUpRecyclerView();
-        getProductsInCart();
-
-        continue_button.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(CartActivity.this, order_placing.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_cart);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_cart);
+        mBinding.recyclerViewCart.setLayoutManager(new LinearLayoutManager(this));
+        updateUI();
     }
 
-    private void setUpRecyclerView()
+    public void updateUI()
     {
-        linearLayoutManager = new LinearLayoutManager(CartActivity.this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-       // cartBinding.recyclerview.setHasFixedSize(true);
-        cartViewModel = new ViewModelProvider(this).get(CartViewModel.class);
+        //TODO get list of product
+        List<Product> products = new ArrayList<>();
+        products.add(new Product("SHJOE",14.2,3,"ME!","TEstign1"));
+        products.add(new Product("SHJOE2",11.2,2,"ME2","TEstign55"));
+        products.add(new Product("SHJO3",17.2,1,"ME3","TEstign12"));
+        products.add(new Product("SHJOE6",11.2,6,"ME4","TEstign122"));
+        products.add(new Product("SHJOE",14.2,3,"ME!","TEstign1"));
+        products.add(new Product("SHJOE2",11.2,2,"ME2","TEstign55"));
+        products.add(new Product("SHJO3",17.2,1,"ME3","TEstign12"));
+        products.add(new Product("SHJOE6",11.2,6,"ME4","TEstign122"));
+        products.add(new Product("SHJOE",14.2,3,"ME!","TEstign1"));
+        products.add(new Product("SHJOE2",11.2,2,"ME2","TEstign55"));
+        products.add(new Product("SHJO3",17.2,1,"ME3","TEstign12"));
+        products.add(new Product("SHJOE6",11.2,6,"ME4","TEstign122"));
+        if(products.size()>0)
+        {
+            mBinding.layoutNoData.setVisibility(View.GONE);
+        }
+        mBinding.recyclerViewCart.setAdapter(new CartAdapter(products));
     }
 
-    private void getProductsInCart()
-    {
-        cartAdapter = new CartAdapter(recyclerView,CartActivity.this,new ArrayList<Integer>(),new ArrayList<String>(),new ArrayList<String>());
+    public class CartItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private Product mProduct;
+        TextView mProductName, mProductPrice;
+        ImageView mProductImage;
+        private int mProductPosition;
 
+        public CartItemViewHolder(LayoutInflater inflater, ViewGroup parent) {
+            super(inflater.inflate(R.layout.item_list_cart_product, parent, false));
+            itemView.setOnClickListener(this);
 
-        cartAdapter.update(R.drawable.shoes1,"Asian WNDR-13 Running Shoes for Men(Green, Grey)","₹300.00");
-        cartAdapter.update(R.drawable.shoes2,"Asian WNDR-13 Running Shoes for Men(Green, Grey)","₹500.00");
+            mProductName = itemView.findViewById(R.id.product_name);
+            mProductPrice = itemView.findViewById(R.id.product_price);
+            mProductImage = itemView.findViewById(R.id.product_image);
 
-        cartBinding.recyclerview.setAdapter(cartAdapter);
-        cartAdapter.notifyDataSetChanged();
+        }
 
+        public void bind(Product product) {
+            //TODO: edit here
+            mProduct = product;
+            mProductName.setText(mProduct.getProductName());
+            mProductPrice.setText(String.valueOf(mProduct.getProductPrice()));
+//            mProductImage.setImageBitmap(mProduct.getProductImage());
+            mProductImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.shoes1, null));
+        }
 
-       /* cartViewModel.getProductsInCart(LoginUtils.getInstance(this).getUserInfo().getId()).observe(this, cartApiResponse ->
-        {
-            if (cartApiResponse != null)
-            {
-                favoriteList = cartApiResponse.getProductsInCart();
-                if (favoriteList.size() == 0)
-                {
-                    //cartBinding.noBookmarks.setVisibility(View.VISIBLE);
-                   // cartBinding.emptyCart.setVisibility(View.VISIBLE);
-                }
-                else
-                    cartBinding.recyclerview.setVisibility(View.VISIBLE);
+        @Override
+        public void onClick(View view) {
+            // view product detail ?
+        }
 
-                /*cartAdapter = new CartAdapter(getApplicationContext(), favoriteList, product ->
-                {
-                    Intent intent = new Intent(CartActivity.this, order_placing.class);
-                    // Pass an object of product class
-                    intent.putExtra(PRODUCT, (product));
-                    startActivity(intent);
-                }, this);*/
+        public int getProductPosition() {
+            return mProductPosition;
+        }
 
+        public void setProductPosition(int productPosition) {
+            mProductPosition = productPosition;
+        }
+    }
 
-            }
+    public class CartAdapter extends RecyclerView.Adapter<CartItemViewHolder> {
+        private List<Product> mProducts;
 
-           // binding.loadingIndicator.setVisibility(View.GONE);
+        public CartAdapter(List<Product> products) {
+            mProducts = products;
+        }
 
-        //});*/
+        @NonNull
+        @Override
+        public CartItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater inflater = LayoutInflater.from(CartActivity.this);
+            return new CartItemViewHolder(inflater, parent);
+        }
 
+        @Override
+        public void onBindViewHolder(@NonNull CartItemViewHolder holder, int position) {
+            Product product = mProducts.get(position);
+            holder.bind(product);
+            holder.setProductPosition(position);
+        }
+
+        @Override
+        public int getItemCount() {
+            return mProducts.size();
+        }
+    }
 }

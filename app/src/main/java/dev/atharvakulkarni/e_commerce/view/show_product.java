@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import dev.atharvakulkarni.e_commerce.R;
+import dev.atharvakulkarni.e_commerce.view.PlacingOrder.order_placing;
 
 public class show_product extends AppCompatActivity
 {

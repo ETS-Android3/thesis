@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 public class Product implements Parcelable {
 
     @SerializedName("id")
-    private int productId;
+    private String productId;
     @SerializedName("product_name")
     private String productName;
     @SerializedName("price")
@@ -41,7 +41,7 @@ public class Product implements Parcelable {
 
     }
 
-    public int getProductId() {
+    public String getProductId() {
         return productId;
     }
 
@@ -89,7 +89,7 @@ public class Product implements Parcelable {
     // Write the values to be saved to the `Parcel`.
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        out.writeInt(productId);
+        out.writeString(productId);
         out.writeString(productName);
         out.writeDouble(productPrice);
         out.writeInt(productQuantity);
@@ -103,7 +103,7 @@ public class Product implements Parcelable {
 
     // Retrieve the values written into the `Parcel`.
     private Product(Parcel in) {
-        productId = in.readInt();
+        productId = in.readString();
         productName = in.readString();
         productPrice = in.readDouble();
         productQuantity = in.readInt();

@@ -12,34 +12,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity"
+            android:exported="true">
 
-        </activity>
-        <activity android:name=".view.search_result"/>
-        <activity android:name=".view.CartActivity">
-
-
-
-
-        </activity>
-        <activity android:name=".view.show_product">
-
-
-        </activity>
-
-
-        <activity android:name=".view.sigin_signup">
-            <intent-filter>
+            <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.SearchResultActivity"/>
+        <activity android:name=".view.CartActivity">
+        </activity>
+        <activity android:name=".view.SearchActivity"/>
+        <activity android:name=".view.show_product">
+        </activity>
 
-        <activity android:name=".view.order_placing">
+        <activity
+            android:label="Sign in activity"
+            android:name=".view.SignInActivity" >
+<!--            <intent-filter >-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".view.SignUpActivity"/>
+<!--        <activity android:name=".view.HomeFragment"/>-->
+        <activity android:name=".view.PlacingOrder.order_placing">
 
 
         </activity>
+        <activity android:name=".view.NotificationActivity"/>
         <activity android:name=".view.AllCategoryActivity"/>
         <activity android:name=".view.MyOrdersActivity"/>
         <activity android:name=".view.OrderDetailsActivity"/>

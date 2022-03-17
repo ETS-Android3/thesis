@@ -31,7 +31,7 @@ public class AllCategoryActivity extends AppCompatActivity
 
         gridView = allCategoriesBinding.gridlayout;
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.white,getTheme()));
+//        getWindow().setStatusBarColor(getResources().getColor(R.color.white,getTheme()));
 
         gridList();
 

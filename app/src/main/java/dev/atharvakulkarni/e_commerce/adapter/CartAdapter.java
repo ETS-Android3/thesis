@@ -10,9 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,10 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.atharvakulkarni.e_commerce.R;
-import dev.atharvakulkarni.e_commerce.ViewModel.AddFavoriteViewModel;
-import dev.atharvakulkarni.e_commerce.ViewModel.CartViewModel;
-import dev.atharvakulkarni.e_commerce.ViewModel.FromCartViewModel;
-import dev.atharvakulkarni.e_commerce.ViewModel.RemoveFavoriteViewModel;
+import dev.atharvakulkarni.e_commerce.viewModel.AddFavoriteViewModel;
+import dev.atharvakulkarni.e_commerce.viewModel.FromCartViewModel;
+import dev.atharvakulkarni.e_commerce.viewModel.RemoveFavoriteViewModel;
 import dev.atharvakulkarni.e_commerce.databinding.CartItemBinding;
 import dev.atharvakulkarni.e_commerce.model.Product;
 
@@ -38,10 +35,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>
     private List<Product> productsInCart;
 
     private CartAdapter.CartAdapterOnClickHandler clickHandler;
-
-    private AddFavoriteViewModel addFavoriteViewModel;
-    private RemoveFavoriteViewModel removeFavoriteViewModel;
-    private FromCartViewModel fromCartViewModel;
+//
+//    private AddFavoriteViewModel addFavoriteViewModel;
+//    private RemoveFavoriteViewModel removeFavoriteViewModel;
+//    private FromCartViewModel fromCartViewModel;
 
     /**
      * The interface that receives onClick messages.
@@ -60,9 +57,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>
         this.price = price;
 
 
-        addFavoriteViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(AddFavoriteViewModel.class);
-        removeFavoriteViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(RemoveFavoriteViewModel.class);
-        fromCartViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(FromCartViewModel.class);
+//        addFavoriteViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(AddFavoriteViewModel.class);
+//        removeFavoriteViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(RemoveFavoriteViewModel.class);
+//        fromCartViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(FromCartViewModel.class);
     }
 
     /*public CartAdapter(Context mContext, List<Product> productInCart, CartAdapter.CartAdapterOnClickHandler clickHandler, FragmentActivity activity)

@@ -31,7 +31,7 @@ public class MyOrdersActivity extends AppCompatActivity
 
         recyclerView = myOrdersBinding.recyclerview;
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.white,getTheme()));
+//        getWindow().setStatusBarColor(getResources().getColor(R.color.white,getTheme()));
 
         setUpRecyclerView();
         getProductsInCart();

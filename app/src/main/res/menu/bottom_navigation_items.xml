@@ -28,7 +28,7 @@
         android:title="Message" />
 
     <item
-        android:id="@+id/user"
+        android:id="@+id/my_account"
         android:icon="@drawable/person_outline"
         app:showAsAction="ifRoom"
         android:title="User" />
