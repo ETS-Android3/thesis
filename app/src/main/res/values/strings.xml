@@ -73,7 +73,9 @@
     <string name="my_favorites">My Favorites</string>
     <string name="popular_product">Popular Products</string>
     <string name="recent_product">Recent Products</string>
+    <string name="latest_product">Latest Products</string>
     <string name="feature_product">Feature Products</string>
+    <string name="best_selling_product">Best Selling Products</string>
     <string name="offer_product">Offer Products</string>
     <string name="search_hint">Search a item</string>
     <string name="womens_product">Women"'"s Product</string>

@@ -14,6 +14,8 @@ import androidx.core.view.GravityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.like.LikeButton;
+import com.like.OnLikeListener;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -82,6 +84,34 @@ public class HomeFragment extends Fragment implements HomeViewModel.HomeViewMode
                 return false;
             }
         });
+        //load 10 or more item_card_view_product
+        for(int i = 0 ;i < 10 ;i++)
+        {
+            //TODO set price and name of the product
+            View view = inflater.inflate(R.layout.item_card_view_product,binding.newProductsLayout,false);
+            ImageView productImage = view.findViewById(R.id.product_image);
+            productImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //start product details activity
+
+                }
+            });
+            LikeButton likeButton = view.findViewById(R.id.like_button);
+            likeButton.setOnLikeListener(new OnLikeListener() {
+                @Override
+                public void liked(LikeButton likeButton) {
+                    // process to add this to wishlist
+                }
+
+                @Override
+                public void unLiked(LikeButton likeButton) {
+                    //process to remove this from wishlist
+                }
+            });
+            binding.newProductsLayout.addView(view);
+        }
+
         return binding.getRoot();
     }
 

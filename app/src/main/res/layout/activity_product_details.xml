@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <data>
+        <variable
+            name="ProductDetailsViewModel"
+            type="dev.atharvakulkarni.e_commerce.viewModel.ProductDetailsViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -68,14 +72,25 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/layout_buy" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/adView"
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:id="@+id/adView"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/height_56"-->
+<!--                    android:layout_marginTop="@dimen/margin_8"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/layout_details" />-->
+                <include android:id="@+id/layout_shop"
+                    layout="@layout/layout_shop"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/height_56"
-                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_details" />
+                    app:layout_constraintTop_toBottomOf="@+id/layout_details"/>
                 <!--
                                 <include
                                     android:id="@+id/layout_color"
@@ -106,11 +121,11 @@
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/adView" />
+                    app:layout_constraintTop_toBottomOf="@+id/layout_shop" />
 
                 <include
                     android:id="@+id/layout_review_product"
-                    layout="@layout/layout_customar_review"
+                    layout="@layout/layout_customer_review"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_8"

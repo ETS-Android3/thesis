@@ -128,7 +128,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="New Arrivals"
+                            android:text="New Products"
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold" />
@@ -141,143 +141,16 @@
                     </LinearLayout>
 
                     <HorizontalScrollView
+                        android:id="@+id/new_products_scroll_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fillViewport="true">
 
                         <LinearLayout
+                            android:id="@+id/new_products_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="12dp">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:padding="10dp">
-
-                                    <com.like.LikeButton
-                                        android:id="@+id/star_button1"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="end"
-                                        app:icon_size="25dp"
-                                        app:icon_type="heart"
-                                        app:like_drawable="@drawable/favorite_like"
-                                        app:unlike_drawable="@drawable/favorite_unlike" />
-
-                                    <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp"
-                                        android:src="@drawable/shoes1" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Nike Air Max 2090"
-                                        android:textColor="@color/black"
-                                        android:textSize="13dp" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="₹150"
-                                        android:textColor="@color/black"
-                                        android:textSize="23dp" />
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:padding="10dp">
-
-                                    <com.like.LikeButton
-                                        android:id="@+id/star_button2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="end"
-                                        app:icon_size="25dp"
-                                        app:icon_type="heart"
-                                        app:like_drawable="@drawable/favorite_like"
-                                        app:unlike_drawable="@drawable/favorite_unlike" />
-
-                                    <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp"
-                                        android:src="@drawable/shoes1" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Nike Air Max 2090"
-                                        android:textColor="@color/black"
-                                        android:textSize="15dp" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="₹150"
-                                        android:textColor="@color/black"
-                                        android:textSize="23dp" />
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:padding="10dp">
-
-                                    <com.like.LikeButton
-                                        android:id="@+id/star_button3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="end"
-                                        app:icon_size="25dp"
-                                        app:icon_type="heart"
-                                        app:like_drawable="@drawable/favorite_like"
-                                        app:unlike_drawable="@drawable/favorite_unlike" />
-
-                                    <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp"
-                                        android:src="@drawable/shoes1" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Nike Air Max 2090"
-                                        android:textColor="@color/black"
-                                        android:textSize="15dp" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="₹150"
-                                        android:textColor="@color/black"
-                                        android:textSize="23dp" />
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
@@ -324,14 +197,6 @@
                         </LinearLayout>
 
                     </HorizontalScrollView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:paddingBottom="100dp"
-                        android:text="Atharva"
-                        android:textSize="60dp" />
                 </LinearLayout>
 
             </ScrollView>

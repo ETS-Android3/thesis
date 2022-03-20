@@ -40,24 +40,22 @@ public class CartActivity extends AppCompatActivity {
         updateUI();
     }
 
-    public void updateUI()
-    {
+    public void updateUI() {
         //TODO get list of product
         List<Product> products = new ArrayList<>();
-        products.add(new Product("SHJOE",14.2,3,"ME!","TEstign1"));
-        products.add(new Product("SHJOE2",11.2,2,"ME2","TEstign55"));
-        products.add(new Product("SHJO3",17.2,1,"ME3","TEstign12"));
-        products.add(new Product("SHJOE6",11.2,6,"ME4","TEstign122"));
-        products.add(new Product("SHJOE",14.2,3,"ME!","TEstign1"));
-        products.add(new Product("SHJOE2",11.2,2,"ME2","TEstign55"));
-        products.add(new Product("SHJO3",17.2,1,"ME3","TEstign12"));
-        products.add(new Product("SHJOE6",11.2,6,"ME4","TEstign122"));
-        products.add(new Product("SHJOE",14.2,3,"ME!","TEstign1"));
-        products.add(new Product("SHJOE2",11.2,2,"ME2","TEstign55"));
-        products.add(new Product("SHJO3",17.2,1,"ME3","TEstign12"));
-        products.add(new Product("SHJOE6",11.2,6,"ME4","TEstign122"));
-        if(products.size()>0)
-        {
+        products.add(new Product("SHJOE", 14.2, 3, "ME!", "TEstign1"));
+        products.add(new Product("SHJOE2", 11.2, 2, "ME2", "TEstign55"));
+        products.add(new Product("SHJO3", 17.2, 1, "ME3", "TEstign12"));
+        products.add(new Product("SHJOE6", 11.2, 6, "ME4", "TEstign122"));
+        products.add(new Product("SHJOE", 14.2, 3, "ME!", "TEstign1"));
+        products.add(new Product("SHJOE2", 11.2, 2, "ME2", "TEstign55"));
+        products.add(new Product("SHJO3", 17.2, 1, "ME3", "TEstign12"));
+        products.add(new Product("SHJOE6", 11.2, 6, "ME4", "TEstign122"));
+        products.add(new Product("SHJOE", 14.2, 3, "ME!", "TEstign1"));
+        products.add(new Product("SHJOE2", 11.2, 2, "ME2", "TEstign55"));
+        products.add(new Product("SHJO3", 17.2, 1, "ME3", "TEstign12"));
+        products.add(new Product("SHJOE6", 11.2, 6, "ME4", "TEstign122"));
+        if (products.size() > 0) {
             mBinding.layoutNoData.setVisibility(View.GONE);
         }
         mBinding.recyclerViewCart.setAdapter(new CartAdapter(products));
@@ -67,6 +65,9 @@ public class CartActivity extends AppCompatActivity {
         private Product mProduct;
         TextView mProductName, mProductPrice;
         ImageView mProductImage;
+        TextView mProductQuantityText;
+        TextView mDeleteButton;
+        ImageView mPlusImageButton, mMinusImageButton;
         private int mProductPosition;
 
         public CartItemViewHolder(LayoutInflater inflater, ViewGroup parent) {
@@ -76,6 +77,9 @@ public class CartActivity extends AppCompatActivity {
             mProductName = itemView.findViewById(R.id.product_name);
             mProductPrice = itemView.findViewById(R.id.product_price);
             mProductImage = itemView.findViewById(R.id.product_image);
+            mProductQuantityText = itemView.findViewById(R.id.product_quantity_text);
+            mPlusImageButton = itemView.findViewById(R.id.plus_button);
+            mMinusImageButton = itemView.findViewById(R.id.minus_button);
 
         }
 
@@ -86,6 +90,24 @@ public class CartActivity extends AppCompatActivity {
             mProductPrice.setText(String.valueOf(mProduct.getProductPrice()));
 //            mProductImage.setImageBitmap(mProduct.getProductImage());
             mProductImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.shoes1, null));
+
+            mPlusImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mProduct.setProductQuantity(mProduct.getProductQuantity() + 1);
+                    mProductQuantityText.setText(String.valueOf(mProduct.getProductQuantity()));
+                }
+            });
+            mMinusImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mProduct.getProductQuantity() > 0)
+                        mProduct.setProductQuantity(mProduct.getProductQuantity() - 1);
+                    mProductQuantityText.setText(String.valueOf(mProduct.getProductQuantity()));
+                }
+            });
+            mProductQuantityText.setText(String.valueOf(mProduct.getProductQuantity()));
+
         }
 
         @Override

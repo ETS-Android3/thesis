@@ -57,6 +57,10 @@ public class Product implements Parcelable {
         return productQuantity;
     }
 
+    public void setProductQuantity(int productQuantity) {
+        this.productQuantity = productQuantity;
+    }
+
     public String getProductSupplier() {
         return productSupplier;
     }
