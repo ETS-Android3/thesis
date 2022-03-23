@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">E-Commerce</string>
 
+    <string name="facebook_application_id">1018648005390330</string>
+    <string name="facebook_app_id">1018648005390330</string>
+    <string name="fb_login_protocol_scheme">fb1018648005390330</string>
+
+    <string name="facebook_client_token">56789</string>
     <string name="re_enter_password">Re-enter Password</string>
     <string name="create_account">Create Account</string>
     <string name="your_name">Your Name</string>
     <string name="sign_in_string">Sign in with your email and password or continue with social media</string>
-
+    <string name="query_hint">Search</string>
     <string name="title_cart">Your Cart</string>
     <string name="title_register">Register</string>
     <string name="title_product_detail">Product Details</string>
@@ -20,8 +25,8 @@
     <string name="title_review_details">Customer Reviews</string>
     <string name="title_about_us">About Us</string>
     <string name="title_order_complete">Order Complete</string>
-    <string name="facebook_app_id">260124471219331</string>
-    <string name="fb_login_protocol_scheme">fb260124471219331</string>
+<!--    <string name="facebook_app_id">260124471219331</string>-->
+<!--    <string name="fb_login_protocol_scheme">fb260124471219331</string>-->
     <string name="qeasy_notification">Qeasy</string>
     <!--  TODO: Remove or change this placeholder text  -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -225,4 +230,10 @@ Product ID :
     <string name="choose_a_color">Choose a color</string>
     <string name="check_availability">Checking inventory availability.CLICK AGAIN!</string>
     <string name="out_of_stock">Your product is out of stock!</string>
+    <string name="asterisk">*</string>
+    <string name="my_products">My Products</string>
+    <string name="add_new_product">Add new product</string>
+    <string name="revenue">Revenue</string>
+    <string name="shop_review">Shop Reviews</string>
+    <string name="view_my_shop">View my shop</string>
 </resources>

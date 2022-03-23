@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v21/ic_menu_gallery.xml" value="0.3075" />
+        <entry key="app/src/main/res/drawable/arrow_right.xml" value="0.3075" />
         <entry key="app/src/main/res/drawable/border_right_bottm_grey.xml" value="0.3075" />
         <entry key="app/src/main/res/drawable/btn_round_left.xml" value="0.3075" />
         <entry key="app/src/main/res/drawable/btn_round_small_border_primary.xml" value="0.3075" />
@@ -42,6 +43,7 @@
         <entry key="app/src/main/res/layout/activity_fragment.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/activity_message.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_my_account.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_new_password.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.20108695652173914" />
@@ -49,11 +51,13 @@
         <entry key="app/src/main/res/layout/activity_product_details_new.xml" value="0.21637426900584794" />
         <entry key="app/src/main/res/layout/activity_product_grid.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.34103260869565216" />
+        <entry key="app/src/main/res/layout/activity_register_shop.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_review_details.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.20108695652173914" />
         <entry key="app/src/main/res/layout/activity_send_email.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_shipping_address.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_shop.xml" value="0.17274569402228976" />
+        <entry key="app/src/main/res/layout/activity_shop_main.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.20108695652173914" />
         <entry key="app/src/main/res/layout/activity_sign_in_email_send.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.34103260869565216" />
@@ -87,6 +91,7 @@
         <entry key="app/src/main/res/layout/item_feature_product.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/item_list_cart_product.xml" value="0.30578512396694213" />
         <entry key="app/src/main/res/layout/item_list_ordered_products.xml" value="0.34103260869565216" />
+        <entry key="app/src/main/res/layout/item_notification.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/item_order_complete.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/item_order_main.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/item_ordered_product.xml" value="0.34103260869565216" />

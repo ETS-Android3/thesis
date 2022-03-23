@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="dev.atharvakulkarni.e_commerce">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            tools:replace="android:value"
+            android:value="@string/facebook_app_id"/>
+<!--        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>-->
 <!--        <activity android:name=".view.MainActivity"-->
 <!--            android:exported="true">-->
 
@@ -23,10 +28,7 @@
         <activity android:name=".view.ShopActivity"
             android:exported="true">
 
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity android:name=".view.SearchResultActivity"/>
@@ -38,18 +40,20 @@
 
         <activity
             android:label="Sign in activity"
+            android:exported="true"
             android:name=".view.SignInActivity" >
-<!--            <intent-filter >-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
         <activity android:name=".view.SignUpActivity"/>
 <!--        <activity android:name=".view.HomeFragment"/>-->
-        <activity android:name=".view.PlacingOrder.order_placing">
+<!--        <activity android:name=".view.PlacingOrder.order_placing">-->
 
 
-        </activity>
+<!--        </activity>-->
         <activity android:name=".view.NotificationActivity"/>
         <activity android:name=".view.AllCategoryActivity"/>
         <activity android:name=".view.MyOrdersActivity"/>

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "113502101-dj2qcchornju1j8kul5o1h2nfete7ad6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.atharvakulkarni.e_commerce",
+            "certificate_hash": "e115576c450a5a9f5bbc2eed33b8a87fcc89093d"
+          }
+        },
+        {
           "client_id": "113502101-0ojsgffp3pjrjn311vhks64d15hh5ufg.apps.googleusercontent.com",
           "client_type": 3
         }

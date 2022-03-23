@@ -6,12 +6,16 @@ import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import dev.atharvakulkarni.e_commerce.BR;
+import dev.atharvakulkarni.e_commerce.R;
 import dev.atharvakulkarni.e_commerce.model.User;
 
 public class SignInViewModel extends BaseObservable {
@@ -24,14 +28,19 @@ public class SignInViewModel extends BaseObservable {
     private FirebaseAuth mAuth;
     private User mUser;
 
+
+
     public interface SignInViewModelCallbacks{
         public void onSignInSuccess();
         public void onSignInFailure();
         public void onSignUpLabelClick();
+        public void onGoogleSignInClick();
+        public void onFacebookSignInClick();
     }
 
     public SignInViewModel(SignInViewModelCallbacks callBacks) {
         this.mCallbacks = callBacks;
+        mAuth = FirebaseAuth.getInstance();
     }
     public void onSignUpTextClicked(){
         mCallbacks.onSignUpLabelClick();
@@ -44,7 +53,6 @@ public class SignInViewModel extends BaseObservable {
             //perform firebase auth
             //if success start main/home activity
             //else show message user name or password is error
-            mAuth = FirebaseAuth.getInstance();
             mAuth.signInWithEmailAndPassword(mUser.getEmail(), mUser.getPassword())
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -65,7 +73,14 @@ public class SignInViewModel extends BaseObservable {
                     });
         }
     }
+    public void onGoogleIconClick()
+    {
+        mCallbacks.onGoogleSignInClick();
+    }
 
+    public void onFacebookSignInClick(){
+        mCallbacks.onFacebookSignInClick();
+    }
 
     @Bindable
     public String getEmail() {
